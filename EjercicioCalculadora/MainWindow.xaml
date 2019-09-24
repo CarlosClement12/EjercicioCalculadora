@@ -9,9 +9,9 @@
     <Grid>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="30,161,0,0" VerticalAlignment="Top" Width="100">
             <RadioButton x:Name="sumaRadioButton" Content="Suma" Checked="SumaRadioButton_Checked"/>
-            <RadioButton x:Name="restaRadioButton" Content="Resta"/>
-            <RadioButton x:Name="multiplicacionRadioButton" Content="Multiplicación"/>
-            <RadioButton x:Name="divisionRadioButton" Content="División"/>
+            <RadioButton x:Name="restaRadioButton" Content="Resta" Checked="RestaRadioButton_Checked"/>
+            <RadioButton x:Name="multiplicacionRadioButton" Content="Multiplicación" Checked="MultiplicacionRadioButton_Checked"/>
+            <RadioButton x:Name="divisionRadioButton" Content="División" Checked="DivisionRadioButton_Checked"/>
         </StackPanel>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="248,148,0,0" TextWrapping="Wrap" Text="Operando 1" VerticalAlignment="Top"/>
         <TextBox x:Name="operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="248,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="Operando1TextBox_TextChanged"/>
