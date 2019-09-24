@@ -36,6 +36,7 @@ namespace EjercicioCalculadora
 
         private void Operando1TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // LIMIT TO NUMERIC ON EACH CHANGE
             Calculus();
         }
 
@@ -46,7 +47,7 @@ namespace EjercicioCalculadora
 
         private void Calculus()
         {
-            if (operando1TextBox.Text != "" && operando2TextBox.Text != "")
+            if (operando1TextBox.Text != "" && operando2TextBox.Text != "") 
             {
                 switch (operation)
                 {
@@ -54,7 +55,7 @@ namespace EjercicioCalculadora
                         resultadoTextBox.Text = "Error";
                         break;
                     case OperationType.Addition:
-                        resultadoTextBox.Text = 
+                        //resultadoTextBox.Text = 
                         break;
                     case OperationType.Substraction:
                         break;
