@@ -1,0 +1,24 @@
+﻿<Window x:Class="EjercicioCalculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjercicioCalculadora"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Icon="calculator.ico">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="30,161,0,0" VerticalAlignment="Top" Width="100">
+            <RadioButton x:Name="sumaRadioButton" Content="Suma" Checked="SumaRadioButton_Checked"/>
+            <RadioButton x:Name="restaRadioButton" Content="Resta"/>
+            <RadioButton x:Name="multiplicacionRadioButton" Content="Multiplicación"/>
+            <RadioButton x:Name="divisionRadioButton" Content="División"/>
+        </StackPanel>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="248,148,0,0" TextWrapping="Wrap" Text="Operando 1" VerticalAlignment="Top"/>
+        <TextBox x:Name="operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="248,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="Operando1TextBox_TextChanged"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="248,198,0,0" TextWrapping="Wrap" Text="Operando 2" VerticalAlignment="Top"/>
+        <TextBox x:Name="operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="248,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="Operando2TextBox_TextChanged"/>
+        <TextBlock x:Name="resultadoTextBlock" HorizontalAlignment="Left" Margin="435,182,0,0" TextWrapping="Wrap" Text="Resultado" VerticalAlignment="Top"/>
+        <TextBox x:Name="resultadoTextBox" HorizontalAlignment="Left" Height="23" Margin="435,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right"/>
+
+    </Grid>
+</Window>
