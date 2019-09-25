@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EjercicioCalculadora
 {
@@ -22,12 +9,23 @@ namespace EjercicioCalculadora
     public partial class MainWindow : Window
     {
         const string ERROR_MESSAGE = "Error";
+        const string DIVIDE_BY_ZERO_MESSAGE = "No se puede dividir entre cero";
+        const string ANY_OPERATION_MESSAGE = "Ninguna operación seleccionada";
+        const string DEFAULT_NUMBER = "0";
+
         public enum OperationType { None, Addition, Substraction, Multiplication, Division};
         OperationType operation = OperationType.None;
 
         public MainWindow()
         {
             InitializeComponent();
+            ResetTextBoxes();
+        }
+
+        private void ResetTextBoxes()
+        {
+            operando1TextBox.Text = DEFAULT_NUMBER;
+            operando2TextBox.Text = DEFAULT_NUMBER;
         }
 
         private void SumaRadioButton_Checked(object sender, RoutedEventArgs e)
@@ -38,8 +36,6 @@ namespace EjercicioCalculadora
 
         private void Operando1TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // LIMIT TO NUMERIC ON EACH CHANGE
-            
             Calculus();
         }
 
@@ -55,36 +51,41 @@ namespace EjercicioCalculadora
 
         private void Calculus()
         {
-            if (operando1TextBox.Text != "" && operando2TextBox.Text != "" && CheckNumeric()) 
+            if (operando1TextBox.Text != string.Empty && operando2TextBox.Text != string.Empty) 
             {
+                if (CheckNumeric())
+                {
 
                     double num1 = double.Parse(operando1TextBox.Text);
                     double num2 = double.Parse(operando2TextBox.Text);
 
-                switch (operation)
-                {
-                    case OperationType.None:
-                        resultadoTextBox.Text = ERROR_MESSAGE;
-                        break;
-                    case OperationType.Addition:
-                        resultadoTextBox.Text = (num1 + num2).ToString();
-                        break;
-                    case OperationType.Substraction:
-                        resultadoTextBox.Text = (num1 - num2).ToString();
-                        break;
-                    case OperationType.Multiplication:
-                        resultadoTextBox.Text = (num1 * num2).ToString();
-                        break;
-                    case OperationType.Division:
-                        if (num2 != 0)
+                    switch (operation)
+                    {
+                        case OperationType.None:
+                            resultadoTextBox.Text = ANY_OPERATION_MESSAGE;
+                            break;
+                        case OperationType.Addition:
+                            resultadoTextBox.Text = (num1 + num2).ToString();
+                            break;
+                        case OperationType.Substraction:
                             resultadoTextBox.Text = (num1 - num2).ToString();
-                        else
-                            resultadoTextBox.Text = ERROR_MESSAGE;
-                        break;
+                            break;
+                        case OperationType.Multiplication:
+                            resultadoTextBox.Text = (num1 * num2).ToString();
+                            break;
+                        case OperationType.Division:
+                            if (num2 != 0)
+                                resultadoTextBox.Text = (num1 / num2).ToString();
+                            else
+                                resultadoTextBox.Text = DIVIDE_BY_ZERO_MESSAGE;
+                            break;
+                    }
                 }
+                else
+                    resultadoTextBox.Text = ERROR_MESSAGE;
             }
             else
-                resultadoTextBox.Text = ERROR_MESSAGE;
+                resultadoTextBox.Text = string.Empty;
         }
 
         private void RestaRadioButton_Checked(object sender, RoutedEventArgs e)
@@ -103,6 +104,35 @@ namespace EjercicioCalculadora
         {
             operation = OperationType.Division;
             Calculus();
+        }
+
+        private void LimpiarButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResetTextBoxes();
+        }
+
+        private void Operando1TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (operando1TextBox.Text == DEFAULT_NUMBER)
+                operando1TextBox.Text = string.Empty;
+        }
+
+        private void Operando2TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (operando2TextBox.Text == DEFAULT_NUMBER)
+                operando2TextBox.Text = string.Empty;
+        }
+
+        private void Operando2TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(operando2TextBox.Text == string.Empty)
+                operando2TextBox.Text = DEFAULT_NUMBER;
+        }
+
+        private void Operando1TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (operando1TextBox.Text == string.Empty)
+                operando1TextBox.Text = DEFAULT_NUMBER;
         }
     }
 }
