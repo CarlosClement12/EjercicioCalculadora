@@ -51,7 +51,7 @@ namespace EjercicioCalculadora
 
         private void Calculus()
         {
-            if (operando1TextBox.Text != string.Empty && operando2TextBox.Text != string.Empty) 
+            if (operando1TextBox.Text != string.Empty && operando2TextBox.Text != string.Empty)
             {
                 if (CheckNumeric())
                 {
@@ -85,7 +85,12 @@ namespace EjercicioCalculadora
                     resultadoTextBox.Text = ERROR_MESSAGE;
             }
             else
-                resultadoTextBox.Text = string.Empty;
+            {
+                if(operation == OperationType.None)
+                    resultadoTextBox.Text = ANY_OPERATION_MESSAGE;
+                else
+                    resultadoTextBox.Text = string.Empty;
+            }
         }
 
         private void RestaRadioButton_Checked(object sender, RoutedEventArgs e)
