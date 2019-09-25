@@ -133,10 +133,5 @@ namespace EjercicioCalculadora
             if (operando1TextBox.Text == string.Empty)
                 operando1TextBox.Text = DEFAULT_NUMBER;
         }
-
-        private void OperandoTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
