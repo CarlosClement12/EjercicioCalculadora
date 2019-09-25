@@ -18,9 +18,9 @@
             <RadioButton x:Name="divisionRadioButton" Content="División" Checked="DivisionRadioButton_Checked"/>
         </StackPanel>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="191,148,0,0" TextWrapping="Wrap" Text="Operando 1" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="191,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="Operando1TextBox_TextChanged" GotFocus="Operando1TextBox_GotFocus" LostFocus="Operando1TextBox_LostFocus" Grid.Column="1"/>
+        <TextBox x:Name="operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="191,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="OperandoTextBox_TextChanged" GotFocus="Operando1TextBox_GotFocus" LostFocus="Operando1TextBox_LostFocus" Grid.Column="1"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="191,198,0,0" TextWrapping="Wrap" Text="Operando 2" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="191,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="Operando2TextBox_TextChanged" GotFocus="Operando2TextBox_GotFocus" LostFocus="Operando2TextBox_LostFocus" Grid.Column="1"/>
+        <TextBox x:Name="operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="191,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="OperandoTextBox_TextChanged" GotFocus="Operando2TextBox_GotFocus" LostFocus="Operando2TextBox_LostFocus" Grid.Column="1"/>
         <TextBlock x:Name="resultadoTextBlock" HorizontalAlignment="Left" Margin="378,182,0,0" TextWrapping="Wrap" Text="Resultado" VerticalAlignment="Top" Grid.Column="1"/>
         <TextBox x:Name="resultadoTextBox" HorizontalAlignment="Left" Height="23" Margin="378,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextAlignment="Right" IsEnabled="False" Grid.Column="1"/>
         <Button x:Name="limpiarButton" Content="Limpiar" HorizontalAlignment="Left" Margin="30,226,0,0" VerticalAlignment="Top" Width="75" Click="LimpiarButton_Click" Grid.ColumnSpan="2"/>

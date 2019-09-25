@@ -34,12 +34,7 @@ namespace EjercicioCalculadora
             Calculus();
         }
 
-        private void Operando1TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Calculus();
-        }
-
-        private void Operando2TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void OperandoTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             Calculus();
         }
@@ -138,6 +133,11 @@ namespace EjercicioCalculadora
         {
             if (operando1TextBox.Text == string.Empty)
                 operando1TextBox.Text = DEFAULT_NUMBER;
+        }
+
+        private void OperandoTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
