@@ -39,21 +39,20 @@ namespace EjercicioCalculadora
             Calculus();
         }
 
-        private bool CheckNumeric()
+        private bool CheckNumeric(out double num1, out double num2)
         {
-            return double.TryParse(operando1TextBox.Text, out double aux1) && double.TryParse(operando2TextBox.Text, out double aux2);
+            num1 = 0;
+            num2 = 0;
+            return double.TryParse(operando1TextBox.Text, out num1) && double.TryParse(operando2TextBox.Text, out num2);
         }
 
         private void Calculus()
         {
             if (operando1TextBox.Text != string.Empty && operando2TextBox.Text != string.Empty)
             {
-                if (CheckNumeric())
+
+                if (CheckNumeric(out double num1, out double num2))
                 {
-
-                    double num1 = double.Parse(operando1TextBox.Text);
-                    double num2 = double.Parse(operando2TextBox.Text);
-
                     switch (operation)
                     {
                         case OperationType.None:
